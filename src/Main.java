@@ -1,4 +1,4 @@
-/** This class is responsible for starting the program.
+/* This class is responsible for starting the program.
 It defines options available for user > searching letter or whole word */
 
 import db.MyFileWriter;
@@ -13,14 +13,6 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 
 public class Main {
-    public Capital cap;
-    public String randomCapitalToFind, hiddenCap, country, userTry, option;
-    public TreeMap capitals;
-    public Integer lifes, level;
-    public Boolean win, game;
-    public Character letter;
-    public ArrayList<String> wrongLetters;
-    public Long score;
 
     public static void main(String[] args) {
         Capital cap = new Capital(); //creates object which stores searched values
