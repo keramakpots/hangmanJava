@@ -1,12 +1,16 @@
 /** This class is responsible for starting the program.
 It defines options available for user > searching letter or whole word */
 
-import db.*;
-import models.*;
-import operators.*;
-import userInterface.*;
-import java.io.*;
-import java.util.*;
+import db.MyFileWriter;
+import models.Capital;
+import models.User;
+import operators.Converter;
+import operators.Validator;
+import userInterface.Printer;
+import userInterface.Ui;
+
+import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class Main {
     public Capital cap;
@@ -20,7 +24,7 @@ public class Main {
 
     public static void main(String[] args) {
         Capital cap = new Capital(); //creates object which stores searched values
-        System.out.println("Enter your name: ");
+        System.out.println("Enter your name : ");
         String name = Ui.getInput();
         User user = new User(name); //creates user object
         Integer level = Ui.chooseLevel(); // prints levels options and chooseLevel
@@ -49,9 +53,9 @@ public class Main {
 
             // get random capitol and change to uppercase
             Boolean win = false;
-            ArrayList<String> wrongLetters = new ArrayList<String>();
+            ArrayList<String> wrongLetters = new ArrayList<>();
             Long startTime = System.nanoTime(); //start counting time
-            while(lifes>0 && win==false) {
+            while (lifes > 0 && !win) {
 
                 System.out.println(hiddenCap);
                 Ui.printEmpty(); //print empty lines for better visability
@@ -62,7 +66,7 @@ public class Main {
                 if (option.length()>1) {
                     System.out.println("Provide capital of: "+country);
                     String userTry = Converter.converterToUp(option); //change to uppercase
-                    if (Validator.validateWord(userTry, randomCapitalToFind) == true) {
+                    if (Validator.validateWord(userTry, randomCapitalToFind)) {
                         Ui.printEmpty();
                         win = true;
                         Long elipsedTime = Ui.measureTime(startTime);
