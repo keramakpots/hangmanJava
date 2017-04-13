@@ -30,7 +30,7 @@ public class Capital {
     }
 
     public TreeMap createMap() {
-        File file = new File("./resources/capitals.txt");
+        File file = new File("../resources/capitals.txt");
         BufferedReader reader = null;
         TreeMap<String, String> newmap = new TreeMap();
         try {
