@@ -1,8 +1,8 @@
-Marek,4.516701984
-Marek,9.1508585
-asdf,4.598709868
-Marek,8.284744368
-Marek,3
-Marek,9
+Marek,4.s
+Marek,9.s
+asdf,4.s
+Marek,8.s
+Marek,3.s
+Marek,9.s
 Marek,40.s
 Rafal,68.s

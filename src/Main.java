@@ -32,9 +32,9 @@ public class Main {
             if (level == 34) {
                 user.setLifes(12);
             } else if (level == 110) {
-                user.setLifes(8);
+                user.setLifes(10);
             } else if (level == 183) {
-                user.setLifes(4);
+                user.setLifes(6);
 
             }
             Integer lifes = user.getLifes();
@@ -104,6 +104,7 @@ public class Main {
                         lifes-=1;
                         Ui.printEmpty();
                         Printer.printHangman(lifes);
+                        System.out.println("Wrong letters >>> " + wrongLetters);
                         if (lifes>0) {
                             System.out.println("Nope. Your've got "+ lifes +" left.");
 
