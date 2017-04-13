@@ -9,8 +9,8 @@ import java.lang.*;
 
 public class Capital {
     public TreeMap newmap;
-    public String country;
-    public String searchedCapital;
+    private String country;
+    private String searchedCapital;
 
     public Capital() {
         this.searchedCapital = "";
@@ -30,7 +30,7 @@ public class Capital {
     }
 
     public TreeMap createMap() {
-        File file = new File("../resources/capitals.txt");
+        File file = new File("./resources/capitals.txt");
         BufferedReader reader = null;
         TreeMap<String, String> newmap = new TreeMap();
         try {
@@ -53,6 +53,7 @@ public class Capital {
                     reader.close();
                 }
             } catch (IOException e) {
+                System.out.print(e);
             }
         }
         //print out the list
@@ -66,12 +67,11 @@ public class Capital {
         List<String> keyList1 = new ArrayList<>(set);//convert set to list of Countries
         List<String> sublist = keyList1.subList(0, level);
         int random = gen.nextInt(sublist.size());
-        String Country = keyList1.get(random);//generate random country
-        return Country;
+
+        return keyList1.get(random);//generate random country
     }
     public String getRandomCapital(String country, TreeMap map) {
-        String searchedCapital = new Converter().converterToUp((String)map.get(country));
-        //^get capital of given country and convert toUpperCase
-        return searchedCapital;
-    }
+
+        return new Converter().converterToUp((String) map.get(country));
+    }   //^get capital of given country and convert toUpperCase
 }
